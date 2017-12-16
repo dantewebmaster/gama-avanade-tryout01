@@ -3,16 +3,177 @@
 <head>
 	<title>Avanade Angular Academy by Gama - Simulado #1</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900" rel="stylesheet">
+	
+	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main role="main" id="main"></main>
-<script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+	<div class="page mx-auto">
+		
+		<main role="main" id="main">
+			
+			<header id="masthead" class="site-header">
+				<div class="header-cta mx-auto text-center">
+					<h1 class="cta-title text-uppercase font-weight-black text-light display-4">Dê propósito para seu código</h1>
+					<p class="cta-description text-light font-weight-normal">Cansado de desenvolver projetos sem sentido? Participe do Avanade Angular Academy</p>
+					<button id="btn-apply-form" class="open-modal btn btn-success btn-lg" data-toggle="modal" data-target="#apply-modal">Inscreva-se</button>
+				</div>
+			</header>
+
+			<section class="section section-process">
+				<div class="container">
+					<div class="row">
+						<div class="process-step col-sm-3 col-xs-12">
+							<div class="step-header text-center">
+								<h3 class="step-title">Inscrições</h3>
+								<small class="date">02/dez a 04/jan</small>
+							</div>
+							<p class="step-description">Para se inscrever basta preencher o formulário e se preparar para o nosso teste técnico com cursos online e simulados.</p>
+						</div>
+						<div class="process-step col-sm-3 col-xs-12">
+							<div class="step-header text-center">
+								<h3 class="step-title">Teste técnico</h3>
+								<small class="date">05 e 06/jan</small>
+							</div>
+							<p class="step-description">Em seguida, prove que você está preparado fazendo os testes técnicos totalmente mão na massa.</p>
+						</div>
+						<div class="process-step col-sm-3 col-xs-12">
+							<div class="step-header text-center">
+								<h3 class="step-title">Seleção e contratação</h3>
+								<small class="date">07/jan a 14/jan</small>
+							</div>
+							<p class="step-description">Os melhores candidatos serão entrevistados e contratados pela Avanade.</p>
+						</div>
+						<div class="process-step col-sm-3 col-xs-12">
+							<div class="step-header text-center">
+								<h3 class="step-title">Treinamento</h3>
+								<small class="date">15/jan a 26/jan</small>
+							</div>
+							<p class="step-description">Serão duas semanas de treinamento super hands-on com os melhores devs do mercado.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<div class="modal fade" id="apply-modal" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title">Faça sua inscrição</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+
+					<div class="modal-body">
+						
+						<div id="apply-error" class="alert alert-warning hidden text-center"><i class="fa fa-warning"></i> Corrija os campos e tente novamente</div>
+						<div id="apply-success" class="alert alert-success hidden text-center"><i class="fa fa-check"></i> Inscrição enviada com sucesso!</div>
+		
+						<form id="form">
+							<div class="form-group">
+								<label for="name" class="">Nome</label>
+								<input type="text" name="name" id="name" class="form-control" />
+							</div>
+							<div class="form-group">
+								<label for="email" class="">E-mail</label>
+								<input type="text" name="email" id="email" class="form-control" />
+								<div id="feedback-email" class="invalid-feedback">
+									Não pode estar vazio<br />
+									Não é válido
+								</div>
+							</div>
+							<button type="submit" id="btn-apply" class="btn btn-success">Inscrever-se</button>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- <footer id="colophon" class="site-footer">
+			<p class="copyright text-center">&copy; 2017: Avanade Angular Academy by Gama - Obrigado pela oportunidade! <a href="https://dantewebmaster.com/">Dante Webmaster</a></p>
+		</footer> -->
+	</div>
+
+
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+	<!-- <script src="js/main.js"></script> -->
+
+	<script>
+	
+		jQuery(document).ready(function ($) {
+
+		var name = $("#name");
+		var email = $("#email");
+
+		/**
+		 * Very simple validation function.
+		 */
+		function formError() {
+
+			$(".error-message, .alert").hide();
+
+			// if name or email are empty
+			if (!name.val() || !email.val()) {
+				$("#apply-error").slideDown();
+			}
+
+			// if name is empty
+			if (!name.val()) {
+				$('<span id="feedback-name" class="error-message text-danger">Não pode estar vazio</span>').insertAfter(name);
+			}
+			// if email is ampty
+			if (!email.val()) {
+				$('<span id="feedback-email" class="error-message text-danger">Não pode estar vazio <br />Não é válido</span>').insertAfter(email);
+			}
+
+		}
+
+		/**
+		 * Success message.
+		 */
+		function formSuccess() {
+			$(".error-message, .alert").hide();
+
+			$("#apply-success").slideDown();
+		}
+
+		$('#form').submit(function (e) {
+			e.preventDefault();
+
+			$.ajax({
+				method: 'POST',
+				url: 'http://avanade.gama.academy/api/process_applications',
+				dataType: 'json',
+				headers: { EMAIL: 'dantewebmaster@outlook.com' }, // coloque seu email que usou para se inscrever aqui!
+				contentType: 'application/json',
+				data: JSON.stringify({ process_application: { name: $('#name').val(), email: $('#email').val() } }),
+				success: function (json) {
+					console.log('Sucesso!');
+
+					formSuccess();
+				},
+				error: function (jqXHR, textStatus, errorThrown) {
+					console.log('Erro: ', jqXHR.responseText);
+
+					formError();
+				}
+			});
+
+		});
+
+	});	
+
+	</script>
+
 </body>
 </html>
